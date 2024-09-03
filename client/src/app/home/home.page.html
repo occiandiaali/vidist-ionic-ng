@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Home
+    <ion-title size="large" style="font-weight: bold;">
+      Vidist
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,9 +9,88 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Home</ion-title>
+      <ion-title size="large" style="font-weight: bold;">Vidist</ion-title>
     </ion-toolbar>
   </ion-header>
+  <div style="width: 100%;height: 240px;background-color: rgb(250, 201, 201);">
+  <img src="https://cdn.dummyjson.com/products/images/furniture/Knoll%20Saarinen%20Executive%20Conference%20Chair/1.png" alt="banner pic" style="width: 100%;height: 240px;" />
+  </div>
 
-  <app-explore-container name="Home page"></app-explore-container>
+    <!-- <app-explore-container name="Home page"></app-explore-container> -->
+
+    <div style="display: flex;margin: 12px; flex-direction: row;justify-content: space-between;">
+  <span style="font-size: larger;font-weight: 800;">Groceries</span>
+  <span style="color: rgb(128, 51, 23);">See all</span>
+  </div>
+  <div class="row1">
+  @if (groceries$ | async; as grocery_products) {
+    @for (product of grocery_products; track product.id) {
+      <app-product-card-container
+      thumbnail={{product.thumbnail}}
+      title={{product.title}}
+      price={{product.price}}
+      category={{product.category}}
+      rating={{product.rating}}
+      brand={{product.brand}}
+      ></app-product-card-container>
+    } @empty {
+      <p style="padding-left: 24px;color: purple;font-weight: 800;">No results yet!</p>
+    }
+  } @else {
+    <p style="padding-left: 24px;color: red;font-weight: 800;">Oops! Something's not right!</p>
+  }
+  </div>
+
+  <!-- <app-explore-container name="Home page"></app-explore-container> -->
+
+  <div style="display: flex;margin: 12px; flex-direction: row;justify-content: space-between;">
+  <span style="font-size: larger;font-weight: 800;">Beauty</span>
+  <span style="color: rgb(128, 51, 23);">See all</span>
+  </div>
+  <div class="row1">
+  @if (beauty$ | async; as beauty_products) {
+    @for (product of beauty_products; track product.id) {
+      <app-product-card-container
+      thumbnail={{product.thumbnail}}
+      title={{product.title}}
+      price={{product.price}}
+      category={{product.category}}
+      rating={{product.rating}}
+      brand={{product.brand}}
+      ></app-product-card-container>
+    } @empty {
+      <p style="padding-left: 24px;color: purple;font-weight: 800;">No results yet!</p>
+    }
+  } @else {
+    <p style="padding-left: 24px;color: red;font-weight: 800;">Oops! Something's not right!</p>
+  }
+  </div>
+
+
+  <!-- <app-explore-container name="Home page"></app-explore-container> -->
+
+    <div style="display: flex;margin: 12px; flex-direction: row;justify-content: space-between;">
+  <span style="font-size: larger;font-weight: 800;">Furniture</span>
+  <span style="color: rgb(128, 51, 23);">See all</span>
+  </div>
+  <div class="row1">
+  @if (furniture$ | async; as furniture_products) {
+    @for (furniture of furniture_products; track furniture.id) {
+      <app-product-card-container
+      thumbnail={{furniture.thumbnail}}
+      title={{furniture.title}}
+      price={{furniture.price}}
+      category={{furniture.category}}
+      rating={{furniture.rating}}
+      brand={{furniture.brand}}
+      ></app-product-card-container>
+    } @empty {
+      <p style="padding-left: 24px;color: purple;font-weight: 800;">No results yet!</p>
+    }
+  } @else {
+    <p style="padding-left: 24px;color: red;font-weight: 800;">Oops! Something's not right!</p>
+  }
+  </div>
+
+ 
 </ion-content>

@@ -1,7 +1,9 @@
 <div id="container">
-  <strong>{{ name }}</strong>
-  <p>{{price}}</p>
-  <p>{{rating}}</p>
+ <img src="{{thumbnail}}" alt={{title}} id="thumb"/>
+  <p style="color: black;"><strong>{{ title }}</strong></p>
+  <p>NGN{{price}}</p>
+  <p>In: {{category}}</p>
+  <p>{{rating}} &#x2605;</p>
       <p>
     Listed by 
   @if (brand !== 'Anonymous') {
