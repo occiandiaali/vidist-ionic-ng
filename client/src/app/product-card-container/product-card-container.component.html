@@ -1,0 +1,18 @@
+<div id="container">
+  <strong>{{ name }}</strong>
+  <p>{{price}}</p>
+  <p>{{rating}}</p>
+      <p>
+    Listed by 
+  @if (brand !== 'Anonymous') {
+    <a
+      target="_blank"
+      rel="noopener noreferrer"
+      href="https://ionicframework.com/docs/components"
+      >{{brand}}</a
+    >
+  } @else {
+    {{brand}}
+  }
+  </p>
+</div>
